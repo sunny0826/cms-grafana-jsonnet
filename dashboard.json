@@ -1,0 +1,1413 @@
+{
+   "__inputs": [ ],
+   "__requires": [ ],
+   "annotations": {
+      "list": [ ]
+   },
+   "editable": false,
+   "gnetId": null,
+   "graphTooltip": 0,
+   "hideControls": true,
+   "id": null,
+   "links": [ ],
+   "panels": [
+      {
+         "content": "\n<div class=\"text-center dashboard-header\">\n  <span>Dashboard</span>\n</div>\n\n\n\n",
+         "datasource": null,
+         "gridPos": {
+            "h": 2,
+            "w": 24,
+            "x": 0,
+            "y": 0
+         },
+         "id": 2,
+         "mode": "html",
+         "title": "",
+         "transparent": true,
+         "type": "text"
+      },
+      {
+         "content": "\n<div class=\"text-center dashboard-header\">\n  <span>云服务器：$ecs 台</span>\n</div>\n\n",
+         "datasource": null,
+         "gridPos": {
+            "h": 2,
+            "w": 4,
+            "x": 0,
+            "y": 2
+         },
+         "id": 3,
+         "mode": "html",
+         "title": "",
+         "transparent": true,
+         "type": "text"
+      },
+      {
+         "content": "\n<div class=\"text-center dashboard-header\">\n  <span>云数据库RDS：$rds 台</span>\n</div>\n\n",
+         "datasource": null,
+         "gridPos": {
+            "h": 2,
+            "w": 4,
+            "x": 4,
+            "y": 2
+         },
+         "id": 4,
+         "mode": "html",
+         "title": "",
+         "transparent": true,
+         "type": "text"
+      },
+      {
+         "content": "\n<div class=\"text-center dashboard-header\">\n  <span>MongoDb：$mongodb 台</span>\n</div>\n\n",
+         "datasource": null,
+         "gridPos": {
+            "h": 2,
+            "w": 4,
+            "x": 8,
+            "y": 2
+         },
+         "id": 5,
+         "mode": "html",
+         "title": "",
+         "transparent": true,
+         "type": "text"
+      },
+      {
+         "content": "\n<div class=\"text-center dashboard-header\">\n  <span>Redis：$redis 台</span>\n</div>\n\n",
+         "datasource": null,
+         "gridPos": {
+            "h": 2,
+            "w": 4,
+            "x": 12,
+            "y": 2
+         },
+         "id": 6,
+         "mode": "html",
+         "title": "",
+         "transparent": true,
+         "type": "text"
+      },
+      {
+         "content": "\n<div class=\"text-center dashboard-header\">\n  <span>负载均衡：$slb 个</span>\n</div>\n\n",
+         "datasource": null,
+         "gridPos": {
+            "h": 2,
+            "w": 4,
+            "x": 16,
+            "y": 2
+         },
+         "id": 7,
+         "mode": "html",
+         "title": "",
+         "transparent": true,
+         "type": "text"
+      },
+      {
+         "content": "\n<div class=\"text-center dashboard-header\">\n  <span>弹性公网IP：$slb 个</span>\n</div>\n\n",
+         "datasource": null,
+         "gridPos": {
+            "h": 2,
+            "w": 4,
+            "x": 20,
+            "y": 2
+         },
+         "id": 8,
+         "mode": "html",
+         "title": "",
+         "transparent": true,
+         "type": "text"
+      },
+      {
+         "datasource": "Variable DataSource",
+         "gridPos": {
+            "h": 6,
+            "w": 4,
+            "x": 0,
+            "y": 4
+         },
+         "id": 9,
+         "links": [ ],
+         "options": {
+            "fieldOptions": {
+               "calcs": [
+                  "mean"
+               ],
+               "defaults": {
+                  "displayName": "${__series.name}",
+                  "links": [ ],
+                  "mappings": [ ],
+                  "max": 100,
+                  "min": 0,
+                  "thresholds": {
+                     "mode": "absolute",
+                     "steps": [
+                        {
+                           "color": "green",
+                           "value": 0
+                        },
+                        {
+                           "color": "#EAB839",
+                           "value": 80
+                        },
+                        {
+                           "color": "red",
+                           "value": 90
+                        }
+                     ]
+                  },
+                  "unit": "percent"
+               },
+               "fields": "",
+               "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true
+         },
+         "pluginVersion": "6.4.2",
+         "targets": [
+            {
+               "refId": "A",
+               "target": "cpu_top",
+               "type": "timeserie"
+            }
+         ],
+         "title": "CPU TOP 1",
+         "transparent": true,
+         "type": "gauge"
+      },
+      {
+         "datasource": "Variable DataSource",
+         "gridPos": {
+            "h": 6,
+            "w": 4,
+            "x": 4,
+            "y": 4
+         },
+         "id": 10,
+         "links": [ ],
+         "options": {
+            "fieldOptions": {
+               "calcs": [
+                  "mean"
+               ],
+               "defaults": {
+                  "displayName": "${__series.name}",
+                  "links": [ ],
+                  "mappings": [ ],
+                  "max": 100,
+                  "min": 0,
+                  "thresholds": {
+                     "mode": "absolute",
+                     "steps": [
+                        {
+                           "color": "green",
+                           "value": 0
+                        },
+                        {
+                           "color": "#EAB839",
+                           "value": 80
+                        },
+                        {
+                           "color": "red",
+                           "value": 90
+                        }
+                     ]
+                  },
+                  "unit": "percent"
+               },
+               "fields": "",
+               "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true
+         },
+         "pluginVersion": "6.4.2",
+         "targets": [
+            {
+               "refId": "A",
+               "target": "mem_top",
+               "type": "timeserie"
+            }
+         ],
+         "title": "内存 TOP 1",
+         "transparent": true,
+         "type": "gauge"
+      },
+      {
+         "datasource": "Variable DataSource",
+         "gridPos": {
+            "h": 6,
+            "w": 4,
+            "x": 8,
+            "y": 4
+         },
+         "id": 11,
+         "links": [ ],
+         "options": {
+            "fieldOptions": {
+               "calcs": [
+                  "mean"
+               ],
+               "defaults": {
+                  "displayName": "${__series.name}",
+                  "links": [ ],
+                  "mappings": [ ],
+                  "max": 100,
+                  "min": 0,
+                  "thresholds": {
+                     "mode": "absolute",
+                     "steps": [
+                        {
+                           "color": "green",
+                           "value": 0
+                        },
+                        {
+                           "color": "#EAB839",
+                           "value": 80
+                        },
+                        {
+                           "color": "red",
+                           "value": 90
+                        }
+                     ]
+                  },
+                  "unit": "percent"
+               },
+               "fields": "",
+               "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true
+         },
+         "pluginVersion": "6.4.2",
+         "targets": [
+            {
+               "refId": "A",
+               "target": "disk_top",
+               "type": "timeserie"
+            }
+         ],
+         "title": "磁盘 TOP 1",
+         "transparent": true,
+         "type": "gauge"
+      },
+      {
+         "datasource": "Variable DataSource",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": 0
+                     },
+                     {
+                        "color": "#EAB839",
+                        "value": 80
+                     },
+                     {
+                        "color": "red",
+                        "value": 90
+                     }
+                  ]
+               },
+               "unit": "percent"
+            }
+         },
+         "gridPos": {
+            "h": 22,
+            "w": 4,
+            "x": 16,
+            "y": 4
+         },
+         "id": 12,
+         "options": {
+            "displayMode": "gradient",
+            "orientation": "horizontal",
+            "reduceOptions": {
+               "calcs": [
+                  "mean"
+               ],
+               "fields": "",
+               "values": false
+            },
+            "showUnfilled": true
+         },
+         "targets": [
+            {
+               "refId": "A",
+               "target": "cpu_top_10",
+               "type": "timeserie"
+            }
+         ],
+         "title": "CPU TOP10",
+         "type": "bargauge"
+      },
+      {
+         "datasource": "Variable DataSource",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": 0
+                     },
+                     {
+                        "color": "#EAB839",
+                        "value": 80
+                     },
+                     {
+                        "color": "red",
+                        "value": 90
+                     }
+                  ]
+               },
+               "unit": "percent"
+            }
+         },
+         "gridPos": {
+            "h": 22,
+            "w": 4,
+            "x": 20,
+            "y": 4
+         },
+         "id": 13,
+         "options": {
+            "displayMode": "gradient",
+            "orientation": "horizontal",
+            "reduceOptions": {
+               "calcs": [
+                  "mean"
+               ],
+               "fields": "",
+               "values": false
+            },
+            "showUnfilled": true
+         },
+         "targets": [
+            {
+               "refId": "A",
+               "target": "mem_top_10",
+               "type": "timeserie"
+            }
+         ],
+         "title": "内存 TOP10",
+         "type": "bargauge"
+      },
+      {
+         "cacheTimeout": null,
+         "colorBackground": true,
+         "colorValue": false,
+         "colors": [
+            "#299c46",
+            "rgba(237, 129, 40, 0.89)",
+            "#d44a3a"
+         ],
+         "datasource": "CMS Grafana Service",
+         "decimals": 2,
+         "format": "decbytes",
+         "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+         },
+         "gridPos": {
+            "h": 3,
+            "w": 4,
+            "x": 12,
+            "y": 4
+         },
+         "id": 14,
+         "interval": null,
+         "links": [ ],
+         "mappingType": 1,
+         "mappingTypes": [
+            {
+               "name": "value to text",
+               "value": 1
+            },
+            {
+               "name": "range to text",
+               "value": 2
+            }
+         ],
+         "maxDataPoints": 100,
+         "nullPointMode": "connected",
+         "nullText": null,
+         "postfix": "",
+         "postfixFontSize": "50%",
+         "prefix": "",
+         "prefixFontSize": "50%",
+         "rangeMaps": [
+            {
+               "from": "null",
+               "text": "N/A",
+               "to": "null"
+            }
+         ],
+         "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+         },
+         "tableColumn": "",
+         "targets": [
+            {
+               "dimensions": [ ],
+               "group": "",
+               "metric": "MeteringStorageUtilization",
+               "period": "3600",
+               "project": "acs_oss_dashboard",
+               "refId": "A",
+               "target": [
+                  "Value"
+               ],
+               "type": "timeserie",
+               "xcol": "timestamp",
+               "ycol": [
+                  "Value"
+               ]
+            }
+         ],
+         "thresholds": "",
+         "title": "OSS存储量",
+         "type": "singlestat",
+         "valueFontSize": "80%",
+         "valueMaps": [
+            {
+               "op": "=",
+               "text": "N/A",
+               "value": "null"
+            }
+         ],
+         "valueName": "current"
+      },
+      {
+         "cacheTimeout": null,
+         "colorBackground": true,
+         "colorValue": false,
+         "colors": [
+            "#56A64B",
+            "rgba(237, 129, 40, 0.89)",
+            "#1F60C4"
+         ],
+         "datasource": "CMS Grafana Service",
+         "decimals": 2,
+         "format": "short",
+         "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+         },
+         "gridPos": {
+            "h": 3,
+            "w": 4,
+            "x": 12,
+            "y": 4
+         },
+         "id": 15,
+         "interval": null,
+         "links": [ ],
+         "mappingType": 1,
+         "mappingTypes": [
+            {
+               "name": "value to text",
+               "value": 1
+            },
+            {
+               "name": "range to text",
+               "value": 2
+            }
+         ],
+         "maxDataPoints": 100,
+         "nullPointMode": "connected",
+         "nullText": null,
+         "postfix": "",
+         "postfixFontSize": "50%",
+         "prefix": "",
+         "prefixFontSize": "50%",
+         "rangeMaps": [
+            {
+               "from": "null",
+               "text": "N/A",
+               "to": "null"
+            }
+         ],
+         "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+         },
+         "tableColumn": "",
+         "targets": [
+            {
+               "describe": "",
+               "dimensions": [ ],
+               "group": "",
+               "metric": "UserTotalRequestCount",
+               "period": "3600",
+               "project": "acs_oss_dashboard",
+               "refId": "A",
+               "target": [
+                  "Value"
+               ],
+               "type": "timeserie",
+               "xcol": "timestamp",
+               "ycol": [
+                  "Value"
+               ]
+            }
+         ],
+         "thresholds": "",
+         "title": "总请求数",
+         "type": "singlestat",
+         "valueFontSize": "80%",
+         "valueMaps": [
+            {
+               "op": "=",
+               "text": "N/A",
+               "value": "null"
+            }
+         ],
+         "valueName": "current"
+      },
+      {
+         "cacheTimeout": null,
+         "colorBackground": true,
+         "colorValue": false,
+         "colors": [
+            "#3274D9",
+            "rgba(237, 129, 40, 0.89)",
+            "#299c46"
+         ],
+         "datasource": "CMS Grafana Service",
+         "decimals": 2,
+         "format": "decbytes",
+         "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+         },
+         "gridPos": {
+            "h": 3,
+            "w": 4,
+            "x": 12,
+            "y": 10
+         },
+         "id": 16,
+         "interval": null,
+         "links": [ ],
+         "mappingType": 1,
+         "mappingTypes": [
+            {
+               "name": "value to text",
+               "value": 1
+            },
+            {
+               "name": "range to text",
+               "value": 2
+            }
+         ],
+         "maxDataPoints": 100,
+         "nullPointMode": "connected",
+         "nullText": null,
+         "postfix": "",
+         "postfixFontSize": "50%",
+         "prefix": "",
+         "prefixFontSize": "50%",
+         "rangeMaps": [
+            {
+               "from": "null",
+               "text": "N/A",
+               "to": "null"
+            }
+         ],
+         "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+         },
+         "tableColumn": "",
+         "targets": [
+            {
+               "dimensions": [ ],
+               "group": "",
+               "metric": "UserInternetRecv",
+               "period": "3600",
+               "project": "acs_oss_dashboard",
+               "refId": "A",
+               "target": [
+                  "Value"
+               ],
+               "type": "timeserie",
+               "xcol": "timestamp",
+               "ycol": [
+                  "Value"
+               ]
+            }
+         ],
+         "thresholds": "",
+         "title": "OSS公网流入流量",
+         "type": "singlestat",
+         "valueFontSize": "80%",
+         "valueMaps": [
+            {
+               "op": "=",
+               "text": "N/A",
+               "value": "null"
+            }
+         ],
+         "valueName": "current"
+      },
+      {
+         "cacheTimeout": null,
+         "colorBackground": true,
+         "colorValue": false,
+         "colors": [
+            "#1F60C4",
+            "rgba(237, 129, 40, 0.89)",
+            "#299c46"
+         ],
+         "datasource": "CMS Grafana Service",
+         "decimals": 2,
+         "format": "decbytes",
+         "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+         },
+         "gridPos": {
+            "h": 3,
+            "w": 4,
+            "x": 12,
+            "y": 13
+         },
+         "id": 17,
+         "interval": null,
+         "links": [ ],
+         "mappingType": 1,
+         "mappingTypes": [
+            {
+               "name": "value to text",
+               "value": 1
+            },
+            {
+               "name": "range to text",
+               "value": 2
+            }
+         ],
+         "maxDataPoints": 100,
+         "nullPointMode": "connected",
+         "nullText": null,
+         "postfix": "",
+         "postfixFontSize": "50%",
+         "prefix": "",
+         "prefixFontSize": "50%",
+         "rangeMaps": [
+            {
+               "from": "null",
+               "text": "N/A",
+               "to": "null"
+            }
+         ],
+         "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+         },
+         "tableColumn": "",
+         "targets": [
+            {
+               "dimensions": [ ],
+               "group": "",
+               "metric": "UserInternetSend",
+               "period": "3600",
+               "project": "acs_oss_dashboard",
+               "refId": "A",
+               "target": [
+                  "Value"
+               ],
+               "type": "timeserie",
+               "xcol": "timestamp",
+               "ycol": [
+                  "Value"
+               ]
+            }
+         ],
+         "thresholds": "",
+         "title": "OSS公网流出流量",
+         "type": "singlestat",
+         "valueFontSize": "80%",
+         "valueMaps": [
+            {
+               "op": "=",
+               "text": "N/A",
+               "value": "null"
+            }
+         ],
+         "valueName": "current"
+      },
+      {
+         "datasource": "Variable DataSource",
+         "fieldConfig": {
+            "defaults": {
+               "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                     {
+                        "color": "green",
+                        "value": 0
+                     },
+                     {
+                        "color": "#EAB839",
+                        "value": 80
+                     },
+                     {
+                        "color": "red",
+                        "value": 90
+                     }
+                  ]
+               },
+               "unit": "percent"
+            }
+         },
+         "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 0,
+            "y": 10
+         },
+         "id": 18,
+         "options": {
+            "displayMode": "lcd",
+            "orientation": "vertical",
+            "reduceOptions": {
+               "calcs": [
+                  "mean"
+               ],
+               "fields": "",
+               "values": false
+            },
+            "showUnfilled": true
+         },
+         "targets": [
+            {
+               "refId": "A",
+               "target": "disk_top_10",
+               "type": "timeserie"
+            }
+         ],
+         "title": "磁盘 TOP10",
+         "type": "bargauge"
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": null,
+         "fill": 2,
+         "gridPos": {
+            "h": 10,
+            "w": 8,
+            "x": 0,
+            "y": 16
+         },
+         "id": 19,
+         "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "sideWidth": 100,
+            "total": false,
+            "values": false
+         },
+         "lines": true,
+         "linewidth": 2,
+         "links": [ ],
+         "nullPointMode": "null",
+         "percentage": false,
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "repeat": null,
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": false,
+         "targets": [
+            {
+               "dimensions": [
+                  "$all_eip",
+                  ","
+               ],
+               "group": "",
+               "metric": "net_tx.rate",
+               "period": "60",
+               "project": "acs_vpc_eip",
+               "refId": "A",
+               "target": [
+                  "Value"
+               ],
+               "type": "timeserie",
+               "xcol": "timestamp",
+               "ycol": [
+                  "Value"
+               ]
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeShift": null,
+         "title": "流出带宽",
+         "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "format": "bps",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            }
+         ]
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": null,
+         "fill": 2,
+         "gridPos": {
+            "h": 10,
+            "w": 8,
+            "x": 8,
+            "y": 16
+         },
+         "id": 20,
+         "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "sideWidth": 100,
+            "total": false,
+            "values": false
+         },
+         "lines": true,
+         "linewidth": 2,
+         "links": [ ],
+         "nullPointMode": "null",
+         "percentage": false,
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "repeat": null,
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": false,
+         "targets": [
+            {
+               "dimensions": [
+                  "$all_eip",
+                  ","
+               ],
+               "group": "",
+               "metric": "net_rx.rate",
+               "period": "60",
+               "project": "acs_vpc_eip",
+               "refId": "A",
+               "target": [
+                  "Value"
+               ],
+               "type": "timeserie",
+               "xcol": "timestamp",
+               "ycol": [
+                  "Value"
+               ]
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeShift": null,
+         "title": "流入带宽",
+         "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "format": "bps",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            }
+         ]
+      },
+      {
+         "activeThemeId": 1,
+         "gridPos": {
+            "h": 3,
+            "w": 24,
+            "x": 0,
+            "y": 26
+         },
+         "id": 21,
+         "themes": [
+            {
+               "name": "Start Theme",
+               "styles": [
+                  {
+                     "props": {
+                        "theme": "default"
+                     },
+                     "type": "basetheme"
+                  },
+                  {
+                     "props": {
+                        "url": "https://images.unsplash.com/photo-1524334228333-0f6db392f8a1"
+                     },
+                     "type": "bgimage"
+                  },
+                  {
+                     "props": {
+                        "url": ""
+                     },
+                     "type": "url"
+                  },
+                  {
+                     "props": {
+                        "text": ".panel-container {\n    background-color: rgba(0,0,0,0.3);\n}"
+                     },
+                     "type": "style"
+                  }
+               ]
+            },
+            {
+               "name": "Aquamarine Theme",
+               "styles": [
+                  {
+                     "props": {
+                        "theme": "default"
+                     },
+                     "type": "basetheme"
+                  },
+                  {
+                     "props": {
+                        "url": ""
+                     },
+                     "type": "bgimage"
+                  },
+                  {
+                     "props": {
+                        "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/aquamarine.css"
+                     },
+                     "type": "url"
+                  },
+                  {
+                     "props": {
+                        "text": ""
+                     },
+                     "type": "style"
+                  }
+               ]
+            },
+            {
+               "name": "Hotline Theme",
+               "styles": [
+                  {
+                     "props": {
+                        "theme": "default"
+                     },
+                     "type": "basetheme"
+                  },
+                  {
+                     "props": {
+                        "url": ""
+                     },
+                     "type": "bgimage"
+                  },
+                  {
+                     "props": {
+                        "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/hotline.css"
+                     },
+                     "type": "url"
+                  },
+                  {
+                     "props": {
+                        "text": ""
+                     },
+                     "type": "style"
+                  }
+               ]
+            },
+            {
+               "name": "Dark Theme",
+               "styles": [
+                  {
+                     "props": {
+                        "theme": "default"
+                     },
+                     "type": "basetheme"
+                  },
+                  {
+                     "props": {
+                        "url": ""
+                     },
+                     "type": "bgimage"
+                  },
+                  {
+                     "props": {
+                        "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/dark.css"
+                     },
+                     "type": "url"
+                  },
+                  {
+                     "props": {
+                        "text": ""
+                     },
+                     "type": "style"
+                  }
+               ]
+            },
+            {
+               "name": "Plex Theme",
+               "styles": [
+                  {
+                     "props": {
+                        "theme": "default"
+                     },
+                     "type": "basetheme"
+                  },
+                  {
+                     "props": {
+                        "url": ""
+                     },
+                     "type": "bgimage"
+                  },
+                  {
+                     "props": {
+                        "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/plex.css"
+                     },
+                     "type": "url"
+                  },
+                  {
+                     "props": {
+                        "text": ""
+                     },
+                     "type": "style"
+                  }
+               ]
+            },
+            {
+               "name": "Space Gray Theme",
+               "styles": [
+                  {
+                     "props": {
+                        "theme": "default"
+                     },
+                     "type": "basetheme"
+                  },
+                  {
+                     "props": {
+                        "url": ""
+                     },
+                     "type": "bgimage"
+                  },
+                  {
+                     "props": {
+                        "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/space-gray.css"
+                     },
+                     "type": "url"
+                  },
+                  {
+                     "props": {
+                        "text": ""
+                     },
+                     "type": "style"
+                  }
+               ]
+            },
+            {
+               "name": "Organizr Theme",
+               "styles": [
+                  {
+                     "props": {
+                        "theme": "default"
+                     },
+                     "type": "basetheme"
+                  },
+                  {
+                     "props": {
+                        "url": ""
+                     },
+                     "type": "bgimage"
+                  },
+                  {
+                     "props": {
+                        "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/organizr-dashboard.css"
+                     },
+                     "type": "url"
+                  },
+                  {
+                     "props": {
+                        "text": ""
+                     },
+                     "type": "style"
+                  }
+               ]
+            }
+         ],
+         "timeFrom": null,
+         "timeShift": null,
+         "title": "",
+         "transparent": true,
+         "type": "yesoreyeram-boomtheme-panel"
+      }
+   ],
+   "refresh": "5m",
+   "rows": [ ],
+   "schemaVersion": 20,
+   "style": "dark",
+   "tags": [
+      "阿里云"
+   ],
+   "templating": {
+      "list": [
+         {
+            "allValue": null,
+            "current": { },
+            "datasource": "Variable DataSource",
+            "hide": 2,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "ecs",
+            "options": [ ],
+            "query": "num(ecs)",
+            "refresh": 1,
+            "regex": "",
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [ ],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+         },
+         {
+            "allValue": null,
+            "current": { },
+            "datasource": "Variable DataSource",
+            "hide": 2,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "rds",
+            "options": [ ],
+            "query": "num(rds)",
+            "refresh": 1,
+            "regex": "",
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [ ],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+         },
+         {
+            "allValue": null,
+            "current": { },
+            "datasource": "Variable DataSource",
+            "hide": 2,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "slb",
+            "options": [ ],
+            "query": "num(slb)",
+            "refresh": 1,
+            "regex": "",
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [ ],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+         },
+         {
+            "allValue": null,
+            "current": { },
+            "datasource": "Variable DataSource",
+            "hide": 2,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "eip",
+            "options": [ ],
+            "query": "num(eip)",
+            "refresh": 1,
+            "regex": "",
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [ ],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+         },
+         {
+            "allValue": null,
+            "current": { },
+            "datasource": "Variable DataSource",
+            "hide": 2,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "redis",
+            "options": [ ],
+            "query": "num(redis)",
+            "refresh": 1,
+            "regex": "",
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [ ],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+         },
+         {
+            "allValue": null,
+            "current": { },
+            "datasource": "Variable DataSource",
+            "hide": 2,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "mongodb",
+            "options": [ ],
+            "query": "num(mongodb)",
+            "refresh": 1,
+            "regex": "",
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [ ],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+         },
+         {
+            "allValue": null,
+            "current": { },
+            "datasource": "Variable DataSource",
+            "hide": 2,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "all_eip",
+            "options": [ ],
+            "query": "all(eip)",
+            "refresh": 1,
+            "regex": "",
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [ ],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+         }
+      ]
+   },
+   "time": {
+      "from": "now-6h",
+      "to": "now"
+   },
+   "timepicker": {
+      "refresh_intervals": [
+         "5s",
+         "10s",
+         "30s",
+         "1m",
+         "5m",
+         "15m",
+         "30m",
+         "1h",
+         "2h",
+         "1d"
+      ],
+      "time_options": [
+         "5m",
+         "15m",
+         "1h",
+         "6h",
+         "12h",
+         "24h",
+         "2d",
+         "7d",
+         "30d"
+      ]
+   },
+   "timezone": "browser",
+   "title": "Dashboard",
+   "version": 0
+}

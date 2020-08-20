@@ -1,0 +1,14 @@
+.idea
+*.iml
+out
+gen
+
+*.db
+### macOS template
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+grafonnet
+dashboadr.json
