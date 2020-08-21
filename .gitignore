@@ -11,3 +11,6 @@ gen
 .LSOverride
 
 dashboard.json
+ecs.json
+rds.json
+eip.json
