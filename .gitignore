@@ -16,3 +16,5 @@ rds.json
 eip.json
 mongodb.json
 redis.json
+oss.json
+slb.json
