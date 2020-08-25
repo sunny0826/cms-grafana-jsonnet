@@ -25,6 +25,6 @@ FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
 WORKDIR /workspace
 COPY --from=builder /workspace/cgt /usr/local/bin/cgt
 COPY --from=builder /go/bin/jsonnet /usr/local/bin/jsonnet
-COPY libs/ .
+COPY libs/ ./libs
 
 ENTRYPOINT ["/usr/local/bin/cgt"]
