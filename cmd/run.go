@@ -22,7 +22,7 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/client-go/rest"
 	"os"
 	"os/exec"
 	"strings"
@@ -107,11 +107,12 @@ func commandJsonnet(name string) *exec.Cmd {
 }
 
 func LoadClient() *kubernetes.Clientset {
-	config, err := clientcmd.BuildConfigFromFlags("", *kubeconfig)
+	// creates the in-cluster config
+	config, err := rest.InClusterConfig()
 	if err != nil {
 		panic(err.Error())
 	}
-	// create the clientset
+	// creates the clientset
 	clientset, err := kubernetes.NewForConfig(config)
 	if err != nil {
 		panic(err.Error())
