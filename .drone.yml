@@ -9,7 +9,7 @@ steps:
         from_secret: docker_user
       password:
         from_secret: docker_pass
-      dockerfile: build/Dockerfile
+      dockerfile: Dockerfile
       repo: guoxudongdocker/cms-grafana-jsonnet
       tags:
         - ${DRONE_BUILD_NUMBER}
