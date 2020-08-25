@@ -1,0 +1,16 @@
+kind: pipeline
+name: cms-grafana-jsonnet
+
+steps:
+  - name: docker build
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_user
+      password:
+        from_secret: docker_pass
+      dockerfile: build/Dockerfile
+      repo: guoxudongdocker/cms-grafana-jsonnet
+      tags:
+        - ${DRONE_BUILD_NUMBER}
+        - v0.0.1
