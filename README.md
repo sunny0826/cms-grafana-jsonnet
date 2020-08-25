@@ -15,4 +15,8 @@ jsonnet -J grafonnet-lib eip.jsonnet > eip.json
 jsonnet -J grafonnet-lib mongodb.jsonnet > mongodb.json
 # generate redis.json
 jsonnet -J grafonnet-lib redis.jsonnet > redis.json
+# generate oss.json
+jsonnet -J grafonnet-lib oss.jsonnet > oss.json
+# generate slb.json
+jsonnet -J grafonnet-lib slb.jsonnet > slb.json
 ```
