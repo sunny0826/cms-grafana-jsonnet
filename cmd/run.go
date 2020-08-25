@@ -58,7 +58,8 @@ func runCommand() error {
 	newClient := LoadClient()
 	cmsConfigmap, err := newClient.CoreV1().ConfigMaps(namespace).Get(context.TODO(), configmap, metav1.GetOptions{})
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 	updateConfigMap(cmsConfigmap, newClient)
 	return nil
@@ -78,7 +79,8 @@ func updateConfigMap(configmap *v1.ConfigMap, client *kubernetes.Clientset) {
 		configmap.Data = data
 		cmsConfigmap, err := client.CoreV1().ConfigMaps(namespace).Update(context.TODO(), configmap, metav1.UpdateOptions{})
 		if err != nil {
-			panic(err.Error())
+			fmt.Println(err.Error())
+			os.Exit(1)
 		} else {
 			fmt.Printf("configmap: %s update success!\nnamespace:%s\n", cmsConfigmap.Name, cmsConfigmap.Namespace)
 		}
@@ -92,7 +94,7 @@ func generateJSON(name string) string {
 	jsonData, err := cmd.CombinedOutput()
 	if err != nil {
 		fmt.Println(jsonData)
-		os.Exit(0)
+		os.Exit(1)
 	}
 	fmt.Printf("generate %s\n",name)
 	return string(jsonData)
@@ -110,12 +112,14 @@ func LoadClient() *kubernetes.Clientset {
 	// creates the in-cluster config
 	config, err := rest.InClusterConfig()
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 	// creates the clientset
 	clientset, err := kubernetes.NewForConfig(config)
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(1)
 	}
 	return clientset
 }
