@@ -88,7 +88,7 @@ func updateConfigMap(configmap *v1.ConfigMap, client *kubernetes.Clientset) {
 
 }
 func generateJSON(name string) string {
-	name = fmt.Sprintf("%s/%s.jsonnet", libs, name)
+	name = fmt.Sprintf("/workspace/%s/%s.jsonnet", libs, name)
 	cmd := commandJsonnet(name)
 	//cmd.Run()
 	jsonData, err := cmd.CombinedOutput()
