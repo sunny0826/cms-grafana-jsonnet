@@ -26,4 +26,5 @@ WORKDIR /workspace
 COPY --from=builder /workspace/cgt .
 COPY --from=builder /go/bin/jsonnet /usr/local/bin/jsonnet
 COPY libs/ .
-USER nonroot:nonroot
+
+ENTRYPOINT ["/usr/local/bin/cgt"]
