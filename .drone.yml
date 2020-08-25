@@ -12,5 +12,5 @@ steps:
       dockerfile: Dockerfile
       repo: guoxudongdocker/cms-grafana-jsonnet
       tags:
-        - ${DRONE_BUILD_NUMBER}
+#        - ${DRONE_BUILD_NUMBER}
         - v0.0.1
