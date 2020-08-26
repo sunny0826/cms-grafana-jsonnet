@@ -1,22 +1,32 @@
 # cms-grafana-jsonnet
 
-Grafana Template of [cms-grafana-builder](https://github.com/sunny0826/cms-grafana-builder)
+Generate configMap for [cms-grafana-builder](https://github.com/sunny0826/cms-grafana-builder)
 
-```shell
-# generate dashboard.json 
-jsonnet -J grafonnet-lib dashboard.jsonnet > dashboard.json
-# generate ecs.json
-jsonnet -J grafonnet-lib ecs.jsonnet > ecs.json
-# generate rds.json
-jsonnet -J grafonnet-lib rds.jsonnet > rds.json
-# generate eip.json
-jsonnet -J grafonnet-lib eip.jsonnet > eip.json
-# generate mongodb.json
-jsonnet -J grafonnet-lib mongodb.jsonnet > mongodb.json
-# generate redis.json
-jsonnet -J grafonnet-lib redis.jsonnet > redis.json
-# generate oss.json
-jsonnet -J grafonnet-lib oss.jsonnet > oss.json
-# generate slb.json
-jsonnet -J grafonnet-lib slb.jsonnet > slb.json
+
+```text
+$ cms -h
+cms grafana jsonnet tool
+
+Usage:
+  cgt [command]
+
+Available Commands:
+  help        Help about any command
+  run         generate json to configmap
+
+Flags:
+  -h, --help   help for cgt
+$ cms run -h
+generate json to configmap
+
+Usage:
+  cgt run [flags]
+
+Flags:
+  -c, --configmap string   name of configmap (default "cms-model")
+  -d, --dashboard string   list of dashboard name
+  -h, --help               help for run
+  -l, --libs string        libs of jsonnet (default "libs")
+  -n, --namespace string   namespace of configmap (default "monitor")
+
 ```

@@ -13,4 +13,4 @@ steps:
       repo: guoxudongdocker/cms-grafana-jsonnet
       tags:
 #        - ${DRONE_BUILD_NUMBER}
-        - 0.1.0
+        - 0.1.1
